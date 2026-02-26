@@ -24,3 +24,6 @@ jobs:
 
       - name: Build & Test
         run: ./gradlew --no-daemon clean test
+
+      - name: Docker Build (Verify Dockerfile)
+        run: docker build -t ai-agent:ci .
