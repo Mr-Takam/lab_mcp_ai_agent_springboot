@@ -20,6 +20,17 @@ repositories {
 }
 
 dependencies {
+    // LangChain4j BOM : Aligne toutes les dépendances sur la version 1.10.0
+    implementation platform("dev.langchain4j:langchain4j-bom:1.10.0")
+
+    // Core de LangChain4j
+    implementation "dev.langchain4j:langchain4j"
+
+    // Module spécifique pour utiliser Claude d'Anthropic
+    implementation "dev.langchain4j:langchain4j-anthropic"
+
+    // Nécessaire pour le futur client HTTP MCP (WebClient)
+    implementation "org.springframework.boot:spring-boot-starter-webflux"
     // MODIFICATION : Ajout du starter-web pour les API REST
     implementation 'org.springframework.boot:spring-boot-starter-web'
     
