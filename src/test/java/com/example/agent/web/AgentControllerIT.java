@@ -14,7 +14,18 @@ import java.util.Map;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(
+    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+    properties = {
+        "anthropic.api-key=test-key",
+        "anthropic.model=test-model",
+        "anthropic.timeout-seconds=60",
+        "github.owner=test-owner",
+        "github.repo=test-repo",
+        "mcp.base-url=http://localhost:3333",
+        "mcp.path=/mcp"
+    }
+)
 @AutoConfigureWebTestClient
 class AgentControllerIT {
 
